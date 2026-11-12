@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-load-test-agent"
+version = "0.1.0"
+description = "Load-testing agent that adaptively ramps concurrency based on live latency/error signatures instead of a fixed load profile, and reports the validated stable capacity."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Felipe Feres" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3"]
+
+[project.scripts]
+adaptive-load-test = "load_test_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["load_test_agent*"]
